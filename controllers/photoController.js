@@ -44,7 +44,7 @@ exports.myPhotos = async (req, res) => {
     );
 
     const photos = result.rows.map(photo => {
-      return {...photo, url: 'http://localhost:4000/' + photo.filepath}
+      return {...photo, url: 'https://porfolio-photo-website-1.onrender.com' + photo.filepath}
     })
 
     res.status(200).json(photos);

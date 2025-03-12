@@ -44,7 +44,7 @@ exports.myPhotos = async (req, res) => {
     );
 
     const photos = result.rows.map(photo => {
-      return {...photo, url:'https://photo-website-417-s8hs.onrender.com/' + photo.filepath}
+      return {...photo, url: 'https://porfolio-photo-website-1.onrender.com/' + photo.filepath}
     })
 
     res.status(200).json(photos);
@@ -80,7 +80,7 @@ exports.getPhotos = async (req, res) => {
     );
 
     const photos = result.rows.map(photo => {
-      return {...photo, url:'https://photo-website-417-s8hs.onrender.com/' + photo.filepath}
+      return {...photo, url: 'https://porfolio-photo-website-1.onrender.com/' + photo.filepath}
     })
 
     res.status(200).json(photos);

@@ -1,7 +1,8 @@
-const express = require('express');
-const { likes } = require('../controllers/likeController');
-const likeRouter = express.Router();
+const express = require("express");
+const { likes } = require("../controllers/likeController");
+const { authentication } = require("../middleware/authentication");
+const router = express.Router();
 
-likeRouter.post('/', likes);
+router.post("/", authentication, likes);
 
 module.exports = likeRouter;

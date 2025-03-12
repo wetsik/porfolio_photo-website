@@ -1,12 +1,12 @@
-const express = require('express');
-const { getPhotos, addPhoto, deletePhoto, myPhotos } = require('../controllers/photoController');
-const { authentcation } = require('../middleware/authentication');
-const uploadMiddleware = require('../middleware/uploadMiddlewere');
-const photoRouter = express.Router();
+const express = require("express");
+const { addPhoto, myPhotos, getPhotos, deletePhoto } = require("../controllers/photoController");
+const { authentication } = require("../middleware/authentication");
+const uploadMiddleware = require("../middleware/uploadMiddleware");
+const router = express.Router();
 
-photoRouter.get('/', authentcation, getPhotos);
-photoRouter.get('/:userId', authentcation, myPhotos);
-photoRouter.post('/', authentcation, uploadMiddleware, addPhoto);
-photoRouter.delete('/:id', authentcation, deletePhoto);
+router.post("/add", authentication, uploadMiddleware, addPhoto);
+router.get("/my-photos/:userId", authentication, myPhotos);
+router.get("/all", authentication, getPhotos);
+router.delete("/:id", authentication, deletePhoto);
 
-module.exports = photoRouter;
+module.exports = router;

@@ -1,9 +1,9 @@
-const express = require('express');
-const { signup, login, getUsers } = require('../controllers/userController');
-const userRouter = express.Router();
+const express = require("express");
+const { signup, login, getUsers } = require("../controllers/userController");
+const router = express.Router();
 
-userRouter.get('/users', getUsers);
-userRouter.post('/signup', signup);
-userRouter.post('/login', login);
+router.get("/users", getUsers);
+router.post("/signup", signup);
+router.post("/login", login);
 
-module.exports = userRouter;
+module.exports = userRouter; // Исправлено на userRouter
